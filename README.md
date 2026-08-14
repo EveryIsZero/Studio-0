@@ -109,7 +109,7 @@ Studio-0-Developer/
 
 ## 📋 版本历史
 
-当前版本: **v4.3.4.43** (vv4.3.4.43)
+当前版本: **4.3.4.43** (v4.3.4.43)
 
 详细变更记录请参见 [releases](EveryIsZero/Studio-0-Developer/releasestag) 页面。
 
