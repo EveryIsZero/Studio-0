@@ -5,6 +5,11 @@
   <em>免费发布版 · 开箱即用 · 无需安装 Python</em>
 </p>
 
+<div align="center">
+  <strong>🌐 语言 / Language：</strong>
+  <a href="README.md"><b>🇨🇳 中文</b></a> | <a href="README_EN.md">🇺🇸 English</a>
+</div>
+
 ---
 
 ## 📖 目录
@@ -112,9 +117,9 @@ Studio 0/
 ├── _internal/             ← 运行时依赖（勿删除、勿移动）
 │   └── （Python 运行时文件）
 ├── cfg/                   ← 用户配置（首次运行后自动生成）
-└── donate/                ← 捐赠码图片
-    ├── 微信捐赠码.png
-    └── 支付宝捐赠码.jpg
+├── 微信捐赠码.png         ← 捐赠码（微信），与 exe 同级
+├── 支付宝捐赠码.jpg       ← 捐赠码（支付宝），与 exe 同级
+└── manual.html            ← 中英文双语说明书（可切换语言，离线可用）
 ```
 
 > ⚠️ **重要**：`Studio 0.exe` 必须与 `_internal/` 文件夹在**同一级目录**下。如果分离或删除 `_internal/`，程序将无法启动。
