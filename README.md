@@ -1,11 +1,14 @@
-# <img src="https://img.shields.io/badge/Studio%200-Developer-blue" alt="Studio 0"/> Modbus 调试工具
+# <img src="https://img.shields.io/badge/Studio%200-Modbus%20工具-blue" alt="Studio 0"/> Modbus 调试工具
 
 <p align="center">
-  <strong>专业级 Modbus 协议调试与仿真工具</strong><br/>
+  <strong>专业级 Modbus 协议调试与仿真工具 · 免费发布版</strong><br/>
   <em>Python / PyQt5 / pymodbus | 支持 RTU / TCP / ASCII</em>
 </p>
 
 ---
+
+> 📦 **本仓库仅发布编译好的免费使用版本（Release 安装包），不提供源代码。**
+> 如需使用，请直接下载下方 Release 中的 `Studio 0 Release 4.3.4.43.zip` 解压即用。
 
 ## ✨ 功能特性
 
@@ -43,45 +46,23 @@
 - **依赖**: PyQt5, pymodbus, pyserial
 
 ### 安装运行
-1. 下载最新 [Release](EveryIsZero/Studio-0-Developer/releases) 中的 `Studio 0.exe`
+1. 进入 [Release](EveryIsZero/Studio-0/releases) 页面，下载最新版 `Studio 0 Release 4.3.4.43.zip`
 2. 解压到任意目录（建议非中文路径）
 3. 双击 `Studio 0.exe` 启动
 4. 首次运行会自动生成配置目录
 
-### 从源码运行
-```bash
-# 克隆仓库
-git clone https://github.com/EveryIsZero/Studio-0-Developer.cd Studio-0-Developer
-
-# 安装依赖
-pip install -r requirements.txt
-
-# 启动
-python main.py
-```
-
 ---
 
-## 📁 项目结构
+## 📦 发布包内容
+解压 `Studio 0 Release 4.3.4.43.zip` 后目录结构如下：
 ```
-Studio-0-Developer/
-├── main.py                 # 程序入口
-├── requirements.txt        # Python 依赖
-├── readme.txt              # 版本迭代记录
-├── cfg/                    # 用户配置（运行时生成）
-├── dist/main/
-│   ├── Studio 0.exe       # 主程序
-│   └── _internal/         # Python 运行时
-├── views/                  # UI 界面模块
-├── services/               # 业务逻辑层
-├── models/                 # 数据模型
-├── utils/                  # 工具函数库
-├── widgets/                # 自定义控件
-├── scripts/                # 自动化脚本
-├── resources/              # 图标/样式资源
-├── docs/                   # 文档
-└── tests/                  # 单元测试
+Studio 0/
+├── Studio 0.exe           # 主程序（双击启动，无需安装 Python）
+├── _internal/             # Python 运行时（必须与 exe 同级，勿删除）
+├── cfg/                   # 用户配置目录（运行时自动生成）
+└── readme.txt             # 版本迭代记录
 ```
+> ⚠️ 请保持 `Studio 0.exe` 与 `_internal/` 在同一目录下，否则无法启动。
 
 ---
 
@@ -111,7 +92,7 @@ Studio-0-Developer/
 
 当前版本: **4.3.4.43** (v4.3.4.43)
 
-详细变更记录请参见 [releases](EveryIsZero/Studio-0-Developer/releasestag) 页面。
+详细变更记录请参见 [Releases](https://github.com/EveryIsZero/Studio-0/releases) 页面。
 
 ---
 
@@ -126,9 +107,11 @@ Studio-0-Developer/
 
 ---
 
-## 📄 许可证
+## 📄 软件许可
 
-本项目采用 **自由软件** 许可证发布。详见 [LICENSE](LICENSE) 文件。
+本软件为 **免费软件（Freeware）**，供个人与商业用途免费使用，**不提供源代码**。
+你可以自由下载、分发本安装包，但不得对其进行逆向工程、破解或用于非法用途。
+版权所有 © EveryIsZero。
 
 ---
 
