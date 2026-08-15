@@ -2,7 +2,11 @@
 
 <p align="center">
   <strong>Professional-grade Modbus protocol debugging &amp; simulation tool</strong><br/>
-  <em>Free release · Ready to use out of the box · No Python installation required</em>
+  <img src="https://img.shields.io/badge/Python-3.12+-3776AB?logo=python&amp;logoColor=white" alt="Python"/>
+  <img src="https://img.shields.io/badge/PyQt5-5.15+-41CD52?logo=qt&amp;logoColor=white" alt="PyQt5"/>
+  <img src="https://img.shields.io/badge/Modbus-RTU%20%7C%20TCP%20%7C%20ASCII-blue" alt="Modbus"/>
+  <img src="https://img.shields.io/badge/No--Code-Visual%20HMI-green" alt="No-Code"/>
+  <img src="https://img.shields.io/badge/Low--Code-Python%20Scripts-orange" alt="Low-Code"/>
 </p>
 
 <div align="center">
@@ -12,9 +16,28 @@
 
 ---
 
+## 🔖 Tags / Topics
+
+<div align="center">
+
+| Tag | Chinese | Description |
+|-----|---------|-------------|
+| **`python`** | 🐍 Python | Built on Python 3.12 / PyQt5 |
+| **`modbus`** | 📡 Modbus | RTU / TCP / ASCII support |
+| **`no-code`** | 🎨 免代码 | Visual drag-and-drop HMI editor, zero code |
+| **`low-code`** | ✏️ 弱代码 | Built-in Python script engine for automation |
+| **`custom`** | ⚙️ 自定义 | Fully configurable widget properties |
+| **`hmi` / `scada`** | 📊 HMI 组态 | Industrial HMI / data visualization |
+| **`industrial` / `iot`** | 🏭 工业自动化 | For industrial automation &amp; IoT |
+
+</div>
+
+---
+
 ## 📖 Table of Contents
 
 - [Product Overview](#product-overview)
+- [⭐ No-Code Graphical HMI (Key Feature)](#-no-code-graphical-hmi-key-feature)
 - [System Requirements](#system-requirements)
 - [Download & Install](#download--install)
 - [Quick Start (5-Minute Guide)](#quick-start-5-minute-guide)
@@ -26,8 +49,7 @@
   - [Multi-Device Management](#multi-device-management)
   - [Communication Log](#communication-log)
   - [Alarm System](#alarm-system)
-  - [Graphical HMI](#graphical-hmi)
-  - [Script Automation](#script-automation)
+  - [Script Automation (Low-Code)](#script-automation-low-code)
 - [Interface Guide](#interface-guide)
 - [Data Point Configuration](#data-point-configuration)
 - [Connection Parameters](#connection-parameters)
@@ -41,28 +63,185 @@
 
 ## Product Overview
 
-**Studio 0** is a professional-grade Modbus protocol debugging and simulation tool, designed for engineers, system integrators, and developers in the industrial automation field.
+**Studio 0** is a professional-grade Modbus debugging &amp; simulation tool built on **Python / PyQt5**, designed for engineers, system integrators, and developers in industrial automation.
 
-Whether you need to **debug on-site communication issues**, **verify the interaction logic between a host SCADA and a slave device**, or **simulate a slave device for integration testing**, Studio 0 provides a complete solution.
+### Tech Stack
+
+| Component | Technology | Version |
+|-----------|-----------|---------|
+| **Language** | Python | 3.12+ |
+| **UI Framework** | PyQt5 | 5.15+ |
+| **Protocol Stack** | Custom (pymodbus-based) | — |
+| **Distribution** | PyInstaller | Single exe, no Python needed for users |
+
+### Core Philosophy: No‑Code + Low‑Code
+
+Studio 0 is built on the principle that **anyone can build professional industrial monitoring interfaces without writing code**:
+
+- **🎨 No‑Code**: Use the **visual drag-and-drop HMI editor** — pick widgets from the toolbox → drag onto canvas → bind data points → adjust styles → run. Zero lines of code.
+- **✏️ Low‑Code**: Built-in **Python script engine** for advanced automation: scheduled tasks, condition triggers, data computation. Standard Python syntax, easy to learn.
 
 ### Use Cases
 
 | Scenario | Description |
 |----------|-------------|
-| **Device integration** | Connect PLCs, VFDs, instruments and other Modbus devices to read/write data in real time |
-| **Protocol analysis** | Capture and decode Modbus frames to locate communication faults |
-| **Slave simulation** | Simulate a Modbus slave device for host/master testing |
-| **Function validation** | Validate the Modbus communication logic of host software without physical hardware |
-| **Learning & teaching** | Understand how the Modbus protocol works and its data formats |
+| **Device integration** | Connect PLCs, VFDs, instruments — read/write in real time |
+| **Protocol analysis** | Capture & decode frames, locate faults |
+| **Slave simulation** | Simulate slave devices for host testing |
+| **Function validation** | Test host software without physical hardware |
+| **Learning & teaching** | Understand Modbus protocol internals |
+| **HMI prototyping** | Rapid industrial UI mockups (no-code) |
 
 ### Core Advantages
 
 - ✅ **Full three-protocol coverage** — RTU / TCP / ASCII in one tool
-- ✅ **Master & Slave dual mode** — act as a master to poll data, or as a slave to respond to requests
-- ✅ **Out of the box** — no Python or dependencies to install; just unzip and run
-- ✅ **Free to use** — free for both personal and commercial use
-- ✅ **Data visualization** — built-in gauges, trend charts, status lamps and more HMI controls
-- ✅ **Complete logging** — every communication frame is recorded and exportable
+- ✅ **Master & Slave dual mode** — poll data as master or respond as slave
+- ✅ **Out of the box** — no Python or dependencies to install
+- ✅ **Free to use** — personal and commercial
+- ✅ **No-code HMI** — drag-and-drop editor with 30+ visual widgets
+- ✅ **Low-code scripting** — built-in Python engine, unlimited extensibility
+- ✅ **Complete logging** — every frame recorded and exportable
+
+---
+
+## ⭐ No-Code Graphical HMI (Key Feature)
+
+> 💡 **This is Studio 0's most distinctive feature** — build professional industrial monitoring interfaces in minutes without programming.
+
+### How It Works
+
+Studio 0 includes a **WYSIWYG HMI editor**:
+
+1. Pick a control type from the left **widget toolbox**
+2. **Drag** it onto the center canvas
+3. Configure position, size, color, font, refresh rate in the right **property panel**
+4. **Bind** the widget to a configured Modbus data point
+5. Click **「Run Mode」** at top-right → see live data driving your interface
+
+### 👁️ Editor Screenshots
+
+The actual Studio 0 HMI editor in **Edit Mode**:
+
+<p align="center">
+  <img src="screenshots/final-edit-mode.png" width="900" alt="Studio 0 HMI Editor - Edit Mode"/>
+  <br/><em>▲ Full editor view: widget toolbox (left) · canvas (center) · property panel (right) · toolbar (top)</em>
+</p>
+
+Notice:
+- **Left toolbox** organizes all controls by category (Data Display / Status Indicator / Command / Slider / Switch / Instrument Chart)
+- **Center canvas** is where you drag, place, and layout your interface
+- **Right property panel** gives you precise control over every detail of each widget
+- **Top toolbar** provides save, undo/redo, zoom, new project, etc.
+
+### Widget Property Configuration
+
+When you select a widget, the right panel shows all its configurable properties. Here's the **Data Label widget** configuration:
+
+<p align="center">
+  <img src="screenshots/widget-datalabel.png" width="900" alt="Studio 0 Data Label Widget Properties"/>
+  <br/><em>▲ Data Label widget: configure position (X/Y), size (W/H), angle, refresh interval, data binding</em>
+</p>
+
+All configuration is **graphical form operation** — fill numbers, select dropdowns, check boxes. No code required.
+
+### Run Mode Toggle
+
+After editing, click the button at top-right to switch to **Run Mode**:
+
+<p align="center">
+  <img src="screenshots/run-mode.png" width="900" alt="Studio 0 Run Mode Toggle"/>
+  <br/><em>▲ 「Run Mode」button: click to enter real-time data-driven view</em>
+</p>
+
+---
+
+### 🧩 Complete Widget Catalog
+
+Studio 0's HMI editor provides **6 categories, 30+ widgets**, covering all common industrial HMI needs:
+
+#### ① Data Display
+
+| Widget | Description | Best For |
+|--------|-------------|----------|
+| **📊 Data Label** | Live numeric value (int/float/hex/string) | Temp, pressure, RPM |
+| **📝 Static Text** | Fixed label text (titles, units, notes) | Decorative text |
+| **📋 Multi-row Table** | Tabular display of multiple registers | Batch register view |
+| **📅 Date/Time** | System or device timestamp display | Time display |
+| **🔢 Arithmetic Sum** | Sum/avg/min/max across data points | Energy stats, totals |
+
+#### ② Status Indicator
+
+| Widget | Description | Best For |
+|--------|-------------|----------|
+| **🔴 Status Lamp** | Color change + optional blink by value/enum | Run/Stop/Alarm |
+| **🏷️ Status Tag** | Text + background color联动 | Device status text |
+| **📡 Device Status** | Online/offline/error summary | Connection overview |
+| **🔋 Battery** | Battery icon + percentage | Mobile device power |
+
+#### ③ Command / Write
+
+| Widget | Description | Best For |
+|--------|-------------|----------|
+| **🔘 Command Button** | Click to send preset write command | Start/stop, reset |
+| **🔄 Auto-reset Button** | Momentary pulse trigger | Jog, step control |
+| **📋 Command Table** | Batch write multiple registers | Parameter batch set |
+| **⚡ Batch Control** | One-click write to multiple points | Global start/stop |
+| **📥 Dropdown List** | Select preset value → send | Mode switch, gear select |
+
+#### ④ Interaction
+
+| Widget | Description | Best For |
+|--------|-------------|----------|
+| **🎚️ Slider** | Drag to continuously adjust value | PID setpoint, brightness |
+| **🔘 Switch** | ON/OFF toggle button | Enable/disable |
+| **🎮 Graphic Switch** | Custom-icon touch switch | Custom UI style |
+
+#### ⑤ Instrument
+
+| Widget | Description | Best For |
+|--------|-------------|----------|
+| **🎯 Gauge** | Classic analog pointer meter (scale/range/color) | RPM, pressure, flow |
+| **🚗 Speedometer** | Semi-circular speed gauge | Motor speed, linear speed |
+| **🔄 Numeric Dial** | Circular large-number display | Key parameter highlight |
+| **📐 Progress Ring** | Circular percentage ring | Completion rate, utilization |
+| **▬ Progress Bar** | Horizontal/vertical bar | Level, load |
+| **🌡️ Thermometer** | Thermometer-style with scale | Temperature display |
+| **🧭 Compass** | Direction indicator (N/S/E/W + angle) | Wind direction, antenna azimuth |
+
+#### ⑥ Chart
+
+| Widget | Description | Best For |
+|--------|-------------|----------|
+| **🍩 Donut/Pie Chart** | Proportional distribution | Energy breakdown, fault types |
+| **📈 Real-time Trend** | Scrolling time-series line chart | Trend monitoring, waveform |
+| **📉 Historical Curve** | Time-axis history replay | Historical analysis |
+| **📊 Bar Chart** | Multi-channel comparison | Multi-device compare |
+| **⚬ Scatter Plot** | XY scatter distribution | Correlation analysis |
+
+#### ⑦ Decoration
+
+| Widget | Description |
+|--------|-------------|
+| **📑 Page Tab** | Multi-page tabbed navigation |
+| **➖ Divider** | Section separator line |
+| **〰️ Flow Line** | Animated flow effect (pipe medium direction) |
+| **🖼️ Background Image** | Background image (device layout / process flow) |
+
+---
+
+### Universal Widget Properties
+
+Every widget supports these **common base parameters** via graphical forms:
+
+| Parameter | Description | Example |
+|-----------|-------------|---------|
+| **X / Y** | Position on canvas | X=100, Y=200 |
+| **Width / Height** | Size in pixels | W=160, H=60 |
+| **Angle** | Rotation (degrees) | 0, 45, 90 |
+| **Refresh Interval (ms)** | Data update frequency | 500 (fast) ~ 5000 (slow) |
+| **Data Binding** | Which Modbus data point to link | Select from configured points |
+
+Each widget also has **exclusive extended properties** (gauge min/max/scale divisions, lamp color mapping table, chart sampling interval, etc.), all presented as form fields in the property panel.
 
 ---
 
