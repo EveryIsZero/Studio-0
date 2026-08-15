@@ -24,7 +24,7 @@
 |-----|---------|-------------|
 | **`python`** | 🐍 Python | Built on Python 3.12 / PyQt5 |
 | **`modbus`** | 📡 Modbus | RTU / TCP / ASCII support |
-| **`no-code`** | 🎨 免代码 | Visual drag-and-drop HMI editor, zero code |
+| **`no-code`** | 🎨 免代码 | Graphical UI, zero code for Modbus debug & data binding |
 | **`low-code`** | ✏️ 弱代码 | Built-in Python script engine for automation |
 | **`custom`** | ⚙️ 自定义 | Fully configurable widget properties |
 | **`hmi` / `scada`** | 📊 HMI 组态 | Industrial HMI / data visualization |
@@ -37,7 +37,7 @@
 ## 📖 Table of Contents
 
 - [Product Overview](#product-overview)
-- [⭐ No-Code Graphical HMI (Key Feature)](#-no-code-graphical-hmi-key-feature)
+- [⭐ Interface Overview](#-interface-overview)
 - [System Requirements](#system-requirements)
 - [Download & Install](#download--install)
 - [Quick Start (5-Minute Guide)](#quick-start-5-minute-guide)
@@ -78,7 +78,7 @@
 
 Studio 0 is built on the principle that **anyone can build professional industrial monitoring interfaces without writing code**:
 
-- **🎨 No‑Code**: Use the **visual drag-and-drop HMI editor** — pick widgets from the toolbox → drag onto canvas → bind data points → adjust styles → run. Zero lines of code.
+- **🎨 No‑Code**: **Graphical UI operation** — select COM port, click to connect, switch tabs for data areas, drag sliders, click send. Zero lines of code.
 - **✏️ Low‑Code**: Built-in **Python script engine** for advanced automation: scheduled tasks, condition triggers, data computation. Standard Python syntax, easy to learn.
 
 ### Use Cases
@@ -104,54 +104,42 @@ Studio 0 is built on the principle that **anyone can build professional industri
 
 ---
 
-## ⭐ No-Code Graphical HMI (Key Feature)
+## ⭐ Interface Overview
 
-> 💡 **This is Studio 0's most distinctive feature** — build professional industrial monitoring interfaces in minutes without programming.
+> 💡 **Studio 0 ("0号工坊") main interface** — all features in one window. Modbus communication debugging and data binding without writing code.
 
-### How It Works
+### Main Interface Screenshot
 
-Studio 0 includes a **WYSIWYG HMI editor**:
-
-1. Pick a control type from the left **widget toolbox**
-2. **Drag** it onto the center canvas
-3. Configure position, size, color, font, refresh rate in the right **property panel**
-4. **Bind** the widget to a configured Modbus data point
-5. Click **「Run Mode」** at top-right → see live data driving your interface
-
-### 👁️ Editor Screenshots
-
-The actual Studio 0 HMI editor in **Edit Mode**:
+The actual Studio 0 main window (**I/O Binding — Bit Operations** tab):
 
 <p align="center">
-  <img src="screenshots/final-edit-mode.png" width="900" alt="Studio 0 HMI Editor - Edit Mode"/>
-  <br/><em>▲ Full editor view: widget toolbox (left) · canvas (center) · property panel (right) · toolbar (top)</em>
+  <img src="screenshots/main_interface.png" width="900" alt="Studio 0 Main Interface - 0号工坊"/>
+  <br/><em>▲ Full interface: menu bar · device connection panel (left) · I/O binding workspace (center) · status bar (bottom)</em>
 </p>
 
-Notice:
-- **Left toolbox** organizes all controls by category (Data Display / Status Indicator / Command / Slider / Switch / Instrument Chart)
-- **Center canvas** is where you drag, place, and layout your interface
-- **Right property panel** gives you precise control over every detail of each widget
-- **Top toolbar** provides save, undo/redo, zoom, new project, etc.
+| Area | Function | How to Use |
+|------|----------|------------|
+| **Menu Bar** | File / View / Config / Help | Global functions |
+| **Toolbar** | Device list · Connect · Disconnect · Advanced Monitor | One-click actions |
+| **Left Panel** | Device management: name, connect/disconnect buttons, COM port | Graphical serial config |
+| **Center Workspace** | I/O Binding: Bit Ops / Coils / Holding Registers (Z3Z4) | Tab switching |
+| **Data Widgets** | Text labels, sliders, config button, send button, progress | Drag to use |
+| **Bit Operation Table** | B0–B15 ↔ Bit.16–Bit.31 register mapping | Visual bit-level R/W |
+| **Status Bar** | Ready state / current port | Real-time feedback |
 
-### Widget Property Configuration
+### No-Code Workflow
 
-When you select a widget, the right panel shows all its configurable properties. Here's the **Data Label widget** configuration:
+Using Studio 0 requires **zero coding**:
 
-<p align="center">
-  <img src="screenshots/widget-datalabel.png" width="900" alt="Studio 0 Data Label Widget Properties"/>
-  <br/><em>▲ Data Label widget: configure position (X/Y), size (W/H), angle, refresh interval, data binding</em>
-</p>
+1. **Configure Connection** — Select COM port in the left panel, click 「Connect」(blue button)
+2. **Bind Data** — Switch between **Bit Operations / Coils / Holding Registers** tabs
+3. **Adjust Parameters** — Drag sliders, type label names, click 「Config」for details
+4. **Send Commands** — Click 「Send」to write data to device, progress bar shows status
+5. **Monitor Status** — Bit operation table shows real-time status of each bit (B0–B15 → register bits)
 
-All configuration is **graphical form operation** — fill numbers, select dropdowns, check boxes. No code required.
+### Advanced Monitor Mode
 
-### Run Mode Toggle
-
-After editing, click the button at top-right to switch to **Run Mode**:
-
-<p align="center">
-  <img src="screenshots/run-mode.png" width="900" alt="Studio 0 Run Mode Toggle"/>
-  <br/><em>▲ 「Run Mode」button: click to enter real-time data-driven view</em>
-</p>
+The toolbar provides an **Advanced Monitor** entry for detailed data views (batch register viewing, message log, etc.).
 
 ---
 
