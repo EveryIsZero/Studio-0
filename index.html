@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Studio 0（0号工坊）— 免费 Modbus 调试与仿真工具</title>
+<meta name="description" content="Studio 0（0号工坊）是一款免费的 Modbus 协议调试与仿真工具，支持 RTU/TCP/ASCII，提供免代码图形组态与 Python 脚本弱代码能力，面向工业自动化工程师。" />
+<style>
+  :root{ --bg:#0d1117; --card:#161b22; --border:#30363d; --fg:#e6edf3; --muted:#8b949e; --accent:#2f81f7; --green:#3fb950; --orange:#db6d28; }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,"PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--fg);line-height:1.6}
+  .wrap{max-width:960px;margin:0 auto;padding:32px 20px 64px}
+  header{text-align:center;padding:24px 0 8px}
+  h1{font-size:2.4rem;font-weight:800;letter-spacing:.5px}
+  .sub{color:var(--muted);font-size:1.05rem;margin-top:8px}
+  .badges{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:18px 0}
+  .badge{background:var(--card);border:1px solid var(--border);border-radius:999px;padding:4px 12px;font-size:.82rem;color:var(--muted)}
+  .cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:26px 0}
+  .btn{display:inline-block;text-decoration:none;font-weight:700;padding:12px 26px;border-radius:10px;font-size:1rem;transition:.2s}
+  .btn-primary{background:var(--accent);color:#fff}
+  .btn-primary:hover{filter:brightness(1.1)}
+  .btn-ghost{background:transparent;border:1px solid var(--border);color:var(--fg)}
+  .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+  section{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:24px;margin:22px 0}
+  h2{font-size:1.5rem;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+  h2 .dot{width:10px;height:10px;border-radius:50%;background:var(--accent)}
+  .feat{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:8px}
+  .feat div{background:#0d1117;border:1px solid var(--border);border-radius:10px;padding:14px}
+  .feat b{color:var(--accent)}
+  .shot{text-align:center;margin-top:18px}
+  .shot img{max-width:100%;border:1px solid var(--border);border-radius:10px}
+  .shot em{display:block;color:var(--muted);font-size:.85rem;margin-top:8px}
+  .steps{counter-reset:s;list-style:none}
+  .steps li{counter-increment:s;padding:10px 0 10px 42px;position:relative;border-bottom:1px dashed var(--border)}
+  .steps li:before{content:counter(s);position:absolute;left:0;top:10px;width:28px;height:28px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.9rem}
+  .donate{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+  .donate figure{text-align:center}
+  .donate img{width:160px;height:160px;border:1px solid var(--border);border-radius:10px;background:#fff}
+  .donate figcaption{color:var(--muted);font-size:.85rem;margin-top:6px}
+  footer{text-align:center;color:var(--muted);font-size:.85rem;margin-top:30px}
+  a{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Studio 0 · 0号工坊</h1>
+    <p class="sub">免费 · 专业的 Modbus 协议调试与仿真工具（工业自动化上位机）</p>
+    <div class="badges">
+      <span class="badge">Python / PyQt5</span>
+      <span class="badge">Modbus RTU / TCP / ASCII</span>
+      <span class="badge">免代码图形组态</span>
+      <span class="badge">Python 脚本弱代码</span>
+      <span class="badge">免安装 · 绿色版</span>
+      <span class="badge">Windows</span>
+    </div>
+    <div class="cta">
+      <a class="btn btn-primary" href="https://github.com/EveryIsZero/Studio-0/releases">⬇ 免费下载</a>
+      <a class="btn btn-ghost" href="https://github.com/EveryIsZero/Studio-0">GitHub 仓库</a>
+    </div>
+  </header>
+
+  <section>
+    <h2><span class="dot"></span>为什么选 Studio 0</h2>
+    <div class="feat">
+      <div><b>🛠 三协议通吃</b><br/>同时支持 Modbus RTU / TCP / ASCII，一台软件覆盖串口与网口设备调试。</div>
+      <div><b>🎨 免代码组态</b><br/>可视化界面完成数据绑定与指令下发，不懂编程也能上手。</div>
+      <div><b>✏️ 弱代码扩展</b><br/>内置 Python 脚本引擎，实现定时任务、条件触发、数据运算等高级自动化。</div>
+      <div><b>📊 实时监控</b><br/>位操作、线圈、寄存器、输入/输出绑定一目了然，报文全程记录可导</div>
+      <div><b>🔌 从站仿真</b><br/>一键模拟从设备，无需真实硬件即可联调上位机。</div>
+      <div><b>💾 绿色免安装</b><br/>解压即用，不写注册表，U 盘随身携带。</div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="dot"></span>真实界面一览</h2>
+    <div class="shot">
+      <img src="https://raw.githubusercontent.com/EveryIsZero/Studio-0/main/screenshots/main_interface.png" alt="Studio 0 主界面 - 0号工坊" />
+      <em>▲ Studio 0（0号工坊）启动后的真实主界面：设备连接面板（左）· 输入/输出绑定工作区（中）· 状态栏</em>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="dot"></span>5 分钟快速上手</h2>
+    <ol class="steps">
+      <li>从 <a href="https://github.com/EveryIsZero/Studio-0/releases">Releases</a> 下载压缩包并解压。</li>
+      <li>运行 <code>Studio 0.exe</code>，在左侧连接面板选择 COM 端口或填入 TCP 地址。</li>
+      <li>点击「连接」，设备上线后切换至「输入/输出绑定 — 位操作」等标签页。</li>
+      <li>用滑块、按钮直接读写保持寄存器 / 线圈，实时查看报文。</li>
+      <li>（进阶）打开脚本编辑器，用 Python 编写定时采集或自动报警逻辑。</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2><span class="dot"></span>支持作者</h2>
+    <p style="color:var(--muted);text-align:center">软件完全免费。如果它帮到了你，欢迎请作者喝杯咖啡 ☕</p>
+    <div class="donate">
+      <figure><img src="https://raw.githubusercontent.com/EveryIsZero/Studio-0/main/donate/wechat_qr.png" alt="微信捐赠码"/><figcaption>微信捐赠</figcaption></figure>
+      <figure><img src="https://raw.githubusercontent.com/EveryIsZero/Studio-0/main/donate/alipay_qr.jpg" alt="支付宝捐赠码"/><figcaption>支付宝捐赠</figcaption></figure>
+    </div>
+  </section>
+
+  <footer>
+    © Studio 0 · 免费发布版 · <a href="https://github.com/EveryIsZero/Studio-0">GitHub</a>
+  </footer>
+</div>
+</body>
+</html>
