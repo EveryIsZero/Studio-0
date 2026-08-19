@@ -268,7 +268,7 @@ Each widget also has **exclusive extended properties** (gauge min/max/scale divi
 ### Step 1: Download
 
 1. Go to the [Releases](https://github.com/EveryIsZero/Studio-0/releases) page
-2. Find the latest `Studio 0 Release 4.3.4.44.zip`
+2. Find the latest `Studio 0 Release 4.3.4.69.zip`
 3. Click to download (about 40 MB)
 
 ### Step 2: Extract
@@ -809,11 +809,11 @@ All config is stored in `cfg/`. **Back up the whole `cfg/` folder** to save ever
 
 ## Version History
 
-Current version: **4.3.4.44** (v4.3.4.44)
+Current version: **4.3.4.69** (v4.3.4.69)
 
 | Version | Date | Note |
 |---------|------|------|
-| **4.3.4.44** | 2025-06 | First public release |
+| **4.3.4.69** | 2025-06 | First public release |
 
 > Detailed changelog: see the Releases page or `readme.txt` inside the package.
 
