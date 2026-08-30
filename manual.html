@@ -1,154 +1,94 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Studio 0 — 使用说明书 / User Manual</title>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Studio 0 使用说明</title>
 <style>
-  :root { --bg:#f7f8fa; --card:#fff; --text:#1f2328; --muted:#57606a; --accent:#2f6feb; --border:#d0d7de; }
-  * { box-sizing: border-box; }
-  body { margin:0; font-family:-apple-system,"Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif; background:var(--bg); color:var(--text); line-height:1.7; }
-  header { position:sticky; top:0; z-index:10; background:var(--card); border-bottom:1px solid var(--border); padding:14px 20px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px; }
-  header h1 { font-size:18px; margin:0; }
-  .lang-switch button { cursor:pointer; border:1px solid var(--border); background:#fff; color:var(--text); padding:6px 14px; border-radius:6px; font-size:14px; }
-  .lang-switch button.active { background:var(--accent); color:#fff; border-color:var(--accent); }
-  main { max-width:920px; margin:24px auto; padding:0 20px 60px; }
-  section { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:18px 22px; margin-bottom:18px; }
-  h2 { border-left:4px solid var(--accent); padding-left:10px; margin-top:0; }
-  h3 { color:var(--accent); }
-  table { border-collapse:collapse; width:100%; margin:10px 0; font-size:14px; }
-  th,td { border:1px solid var(--border); padding:7px 10px; text-align:left; vertical-align:top; }
-  th { background:#eef2f7; }
-  code { background:#eef2f7; padding:2px 6px; border-radius:4px; font-size:13px; }
-  pre { background:#0d1117; color:#e6edf3; padding:12px; border-radius:8px; overflow:auto; font-size:13px; }
-  .center { text-align:center; }
-  img.qr { width:200px; border:1px solid var(--border); border-radius:8px; }
-  footer { text-align:center; color:var(--muted); font-size:13px; padding:20px; }
-  [data-lang="en"] { display:none; }
-  body.en [data-lang="en"] { display:block; }
-  body.en [data-lang="zh"] { display:none; }
-  .muted { color:var(--muted); }
+  :root { --bg:#0f172a; --card:#1e293b; --fg:#e2e8f0; --accent:#38bdf8; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:system-ui,"Microsoft YaHei",sans-serif; background:var(--bg); color:var(--fg); line-height:1.7; }
+  header { padding:28px 20px; text-align:center; background:linear-gradient(135deg,#1e293b,#0f172a); }
+  header h1 { margin:0 0 6px; font-size:26px; }
+  .toggle { position:fixed; top:14px; right:14px; z-index:9; }
+  .toggle button { background:var(--card); color:var(--fg); border:1px solid #334155; border-radius:8px; padding:6px 12px; cursor:pointer; }
+  main { max-width:840px; margin:0 auto; padding:20px; }
+  section { background:var(--card); border:1px solid #334155; border-radius:12px; padding:18px 20px; margin:16px 0; }
+  h2 { color:var(--accent); margin-top:0; }
+  table { width:100%; border-collapse:collapse; margin-top:8px; }
+  th,td { border:1px solid #334155; padding:8px 10px; text-align:left; }
+  th { background:#0f172a; }
+  code { background:#0f172a; padding:2px 6px; border-radius:4px; }
+  .en { display:none; }
+  body.en .zh { display:none; }
+  body.en .en { display:block; }
+  footer { text-align:center; padding:24px; color:#94a3b8; font-size:13px; }
 </style>
 </head>
 <body>
+<div class="toggle"><button onclick="document.body.classList.toggle('en')">CN / EN</button></div>
 <header>
-  <h1 data-lang="zh">Studio 0 — Modbus 调试工具 · 使用说明书</h1>
-  <h1 data-lang="en">Studio 0 — Modbus Debugging Tool · User Manual</h1>
-  <div class="lang-switch">
-    <button id="btnZh" class="active" onclick="setLang('zh')">🇨🇳 中文</button>
-    <button id="btnEn" onclick="setLang('en')">🇺🇸 English</button>
-  </div>
+  <h1>Studio 0（0号工坊）</h1>
+  <p>专业 Modbus 调试工具 · 无需写代码即可组态监控</p>
 </header>
 <main>
 
 <section>
-  <p data-lang="zh"><b>Studio 0</b> 是一款专业级 Modbus 协议调试与仿真工具，支持 RTU / TCP / ASCII 三协议，主从双模式，开箱即用（无需安装 Python）。</p>
-  <p data-lang="en"><b>Studio 0</b> is a professional Modbus debugging &amp; simulation tool supporting RTU / TCP / ASCII, master &amp; slave modes, ready to use out of the box (no Python needed).</p>
+  <h2 class="zh">一、简介与安装</h2>
+  <h2 class="en">1. Overview &amp; Install</h2>
+  <p class="zh">Studio 0 是一款面向工业自动化的 Modbus 调试与上位机工具，支持 RTU / ASCII / TCP / IP 协议，提供寄存器监控、报文分析与可视化组态。</p>
+  <p class="en">Studio 0 is a Modbus debugging &amp; HMI tool for industrial automation, supporting RTU/ASCII/TCP/IP, with register monitoring, packet analysis and visual panel building.</p>
+  <p class="zh">从 Releases 下载 <code>Studio 0 Release_Vx.x.x.x.zip</code>，解压后双击 <code>Studio 0.exe</code> 即可运行，无需安装。</p>
+  <p class="en">Download <code>Studio 0 Release_Vx.x.x.x.zip</code> from Releases, unzip and run <code>Studio 0.exe</code> — no install needed.</p>
 </section>
 
 <section>
-  <h2 data-lang="zh">1. 下载与安装</h2>
-  <h2 data-lang="en">1. Download &amp; Install</h2>
-  <ul>
-    <li data-lang="zh">从 Releases 页面下载 <code>Studio 0 Release 4.3.4.69.zip</code> 并解压到任意目录（建议英文路径）。</li>
-    <li data-lang="en">Download <code>Studio 0 Release 4.3.4.69.zip</code> from the Releases page and extract to any directory (English path recommended).</li>
-    <li data-lang="zh">双击 <code>Studio 0.exe</code> 启动；<code>Studio 0.exe</code> 必须与 <code>_internal/</code> 同目录。</li>
-    <li data-lang="en">Double-click <code>Studio 0.exe</code> to launch; it must sit in the same folder as <code>_internal/</code>.</li>
-    <li data-lang="zh">捐赠码 <code>微信捐赠码.png</code> / <code>支付宝捐赠码.jpg</code> 与本说明书 <code>manual.html</code> 均位于程序根目录。</li>
-    <li data-lang="en">QR codes <code>微信捐赠码.png</code> / <code>支付宝捐赠码.jpg</code> and this <code>manual.html</code> are in the program root.</li>
-  </ul>
-</section>
-
-<section>
-  <h2 data-lang="zh">2. 快速上手（5 分钟）</h2>
-  <h2 data-lang="en">2. Quick Start (5 minutes)</h2>
-  <ol>
-    <li data-lang="zh">工具栏点击「新建连接」，选择协议（RTU / TCP / ASCII）并配置参数（端口、波特率、IP 等）。</li>
-    <li data-lang="en">Click "New Connection" on the toolbar, pick a protocol (RTU / TCP / ASCII) and set parameters (port, baud, IP...).</li>
-    <li data-lang="zh">在数据配置区「添加数据点」：填写从站地址、功能码、起始地址、数量、数据类型。</li>
-    <li data-lang="en">In data config, "Add Data Point": slave address, function code, start address, quantity, data type.</li>
-    <li data-lang="zh">点击「连接」→ 选中数据点 →「启动采集」，实时数值随即显示。</li>
-    <li data-lang="en">Click "Connect" → select points → "Start Acquisition"; live values appear.</li>
-    <li data-lang="zh">双击数值列写入新值并确认下发。</li>
-    <li data-lang="en">Double-click a value to write a new value and confirm.</li>
+  <h2 class="zh">二、快速上手</h2>
+  <h2 class="en">2. Quick Start</h2>
+  <ol class="zh">
+    <li><b>建连接</b>：选协议（如 Modbus TCP）+ 连接方式，填 IP/端口，点「连接」。</li>
+    <li><b>加寄存器</b>：寄存器监控中点「批量添加」，设置地址、功能码、数量。</li>
+    <li><b>读 / 写 / 看</b>：点「读取」刷新；双击单元格写值；勾选「波形」看趋势。</li>
+  </ol>
+  <ol class="en">
+    <li><b>Connect</b>: pick protocol (e.g. Modbus TCP) + link mode, enter IP/port, click Connect.</li>
+    <li><b>Add registers</b>: in Register Monitor click Batch Add, set address/function/quantity.</li>
+    <li><b>Read / Write / View</b>: click Read to refresh; double-click a cell to write; tick Waveform.</li>
   </ol>
 </section>
 
 <section>
-  <h2 data-lang="zh">3. 协议支持</h2>
-  <h2 data-lang="en">3. Protocol Support</h2>
+  <h2 class="zh">三、核心功能一览</h2>
+  <h2 class="en">3. Core Features</h2>
   <table>
-    <tr><th data-lang="zh">协议</th><th data-lang="en">Protocol</th><th data-lang="zh">介质</th><th data-lang="en">Medium</th><th data-lang="zh">默认端口/参数</th><th data-lang="en">Default</th></tr>
-    <tr><td>RTU</td><td>Serial</td><td>COM</td><td>9600/8/1/None</td></tr>
-    <tr><td>TCP</td><td>Ethernet</td><td>IP + Port</td><td>502</td></tr>
-    <tr><td>ASCII</td><td>Serial</td><td>COM</td><td>LRC 校验</td></tr>
+    <tr><th class="zh">功能</th><th class="zh">说明</th><th class="en">Feature</th><th class="en">Description</th></tr>
+    <tr><td class="zh">多协议</td><td class="zh">RTU / ASCII / TCP / IP，主从站全角色</td><td class="en">Multi-protocol</td><td class="en">RTU/ASCII/TCP/IP, master &amp; slave</td></tr>
+    <tr><td class="zh">寄存器监控</td><td class="zh">批量读写、波形、报警阈值</td><td class="en">Register monitor</td><td class="en">batch R/W, waveform, alarms</td></tr>
+    <tr><td class="zh">报文分析</td><td class="zh">收发日志、错误高亮、导出</td><td class="en">Packet analysis</td><td class="en">logs, error highlight, export</td></tr>
+    <tr><td class="zh">可视化组态</td><td class="zh">拖拽控件搭面板</td><td class="en">Visual HMI</td><td class="en">drag-drop widgets</td></tr>
+    <tr><td class="zh">脚本扩展</td><td class="zh">Python 自定义逻辑</td><td class="en">Scripting</td><td class="en">custom Python logic</td></tr>
   </table>
 </section>
 
 <section>
-  <h2 data-lang="zh">4. 数据类型与功能码</h2>
-  <h2 data-lang="en">4. Data Types &amp; Function Codes</h2>
-  <p data-lang="zh">支持 INT16/UINT16/INT32/UINT32/FLOAT32/FLOAT64/HEX/STRING/BYTE ARRAY/BIT。换算公式：<code>实际值 = 原始值 × 系数 + 偏移</code>。字节序支持 ABCD/DCBA/BADC/CDAB。</p>
-  <p data-lang="en">Supports INT16/UINT16/INT32/UINT32/FLOAT32/FLOAT64/HEX/STRING/BYTE ARRAY/BIT. Formula: <code>actual = raw × coefficient + offset</code>. Byte orders: ABCD/DCBA/BADC/CDAB.</p>
-  <p data-lang="zh">功能码：01 读线圈 / 02 读离散输入 / 03 读保持寄存器 / 04 读输入寄存器 / 05 写单线圈 / 06 写单寄存器 / 0F 写多线圈 / 10 写多寄存器。</p>
-  <p data-lang="en">Function codes: 01 Read Coils / 02 Read Discrete Inputs / 03 Read Holding Registers / 04 Read Input Registers / 05 Write Single Coil / 06 Write Single Register / 0F Write Multiple Coils / 10 Write Multiple Registers.</p>
+  <h2 class="zh">四、常见问题</h2>
+  <h2 class="en">4. FAQ</h2>
+  <table>
+    <tr><th class="zh">问题</th><th class="zh">解决</th><th class="en">Issue</th><th class="en">Fix</th></tr>
+    <tr><td class="zh">连不上</td><td class="zh">查 IP/端口、串口占用、防火墙</td><td class="en">No connect</td><td class="en">check IP/port, COM busy, firewall</td></tr>
+    <tr><td class="zh">读不到</td><td class="zh">核对从站地址、功能码、地址范围</td><td class="en">No data</td><td class="en">verify slave addr, function, range</td></tr>
+    <tr><td class="zh">缺 DLL</td><td class="zh">安装 Visual C++ Redistributable</td><td class="en">Missing DLL</td><td class="en">install VC++ Redistributable</td></tr>
+  </table>
 </section>
 
 <section>
-  <h2 data-lang="zh">5. 核心功能</h2>
-  <h2 data-lang="en">5. Core Features</h2>
-  <ul>
-    <li data-lang="zh"><b>从站仿真</b>：模拟 Modbus 从设备，配置数据映射表供主站联调。</li>
-    <li data-lang="en"><b>Slave Simulation</b>: simulate a slave with a mapping table for master testing.</li>
-    <li data-lang="zh"><b>多设备管理</b>：同时连接多台设备，各自独立配置。</li>
-    <li data-lang="en"><b>Multi-Device</b>: connect many devices, each independently configured.</li>
-    <li data-lang="zh"><b>通讯日志</b>：记录全部报文（十六进制 + 解析），可导出。</li>
-    <li data-lang="en"><b>Comm Log</b>: records all frames (hex + decoded), exportable.</li>
-    <li data-lang="zh"><b>报警系统</b>：上下限/偏差/变化率报警，声音/弹窗/日志通知。</li>
-    <li data-lang="en"><b>Alarms</b>: high/low/deviation/rate alarms via sound/popup/log.</li>
-    <li data-lang="zh"><b>图形组态</b>：仪表盘、曲线、状态灯、指令按钮等控件。</li>
-    <li data-lang="en"><b>Graphical HMI</b>: gauges, trends, status lamps, command buttons.</li>
-    <li data-lang="zh"><b>脚本自动化</b>：定时/条件触发的数据采集与写入。</li>
-    <li data-lang="en"><b>Script Automation</b>: scheduled/conditional acquisition and writing.</li>
-  </ul>
-</section>
-
-<section>
-  <h2 data-lang="zh">6. 常见问题</h2>
-  <h2 data-lang="en">6. FAQ</h2>
-  <p data-lang="zh"><b>无法启动？</b> 确保 <code>Studio 0.exe</code> 与 <code>_internal/</code> 同目录；将程序移到纯英文路径；安装 VC++ 运行库；杀软加白名单。</p>
-  <p data-lang="en"><b>Won't start?</b> Keep exe with <code>_internal/</code>; move to an English path; install VC++ runtime; whitelist in antivirus.</p>
-  <p data-lang="zh"><b>数据全 0 / 乱码？</b> 检查从站地址、功能码、字节序、地址偏移。</p>
-  <p data-lang="en"><b>All zeros / garbage?</b> Check slave address, function code, byte order, address offset.</p>
-  <p data-lang="zh"><b>配置备份？</b> 备份整个 <code>cfg/</code> 文件夹即可。</p>
-  <p data-lang="en"><b>Backup config?</b> Back up the whole <code>cfg/</code> folder.</p>
-</section>
-
-<section>
-  <h2 data-lang="zh">7. 支持作者</h2>
-  <h2 data-lang="en">7. Support the Author</h2>
-  <p data-lang="zh">如本工具对你有帮助，欢迎扫码捐赠 ☕</p>
-  <p data-lang="en">If this tool helps you, feel free to scan and donate ☕</p>
-  <div class="center">
-    <img class="qr" src="微信捐赠码.png" alt="WeChat"/>
-    <img class="qr" src="支付宝捐赠码.jpg" alt="Alipay"/>
-  </div>
-  <p class="center muted" data-lang="zh">微信支付（左） · 支付宝（右）</p>
-  <p class="center muted" data-lang="en">WeChat Pay (left) · Alipay (right)</p>
-</section>
-
-<section>
-  <h2 data-lang="zh">8. 许可与反馈</h2>
-  <h2 data-lang="en">8. License &amp; Feedback</h2>
-  <p data-lang="zh">本软件为免费软件（Freeware），仅供个人与商业免费使用，不提供源代码。问题反馈请提交 Issue：<a href="https://github.com/EveryIsZero/Studio-0/issues">GitHub Issues</a>。</p>
-  <p data-lang="en">Freeware for personal &amp; commercial use; source code not provided. Feedback: <a href="https://github.com/EveryIsZero/Studio-0/issues">GitHub Issues</a>.</p>
+  <h2 class="zh">五、支持作者</h2>
+  <h2 class="en">5. Support</h2>
+  <p class="zh">本工具免费发布。若对您有帮助，欢迎扫码捐赠（发行包内含微信 / 支付宝捐赠码）。</p>
+  <p class="en">Free release. If it helps, donations are welcome (QR codes in the package).</p>
 </section>
 
 </main>
-<footer data-lang="zh">Studio 0 · 免费发布版 · 由 EveryIsZero 维护</footer>
-<footer data-lang="en">Studio 0 · Free Release · Maintained by EveryIsZero</footer>
-<script>
-  function setLang(l){ document.body.className = (l==='en'?'en':''); document.getElementById('btnZh').classList.toggle('active', l==='zh'); document.getElementById('btnEn').classList.toggle('active', l==='en'); }
-</script>
+<footer>Made with by EveryIsZero</footer>
 </body>
 </html>
